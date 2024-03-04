@@ -11,12 +11,8 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+const uri = `mongodb+srv://${process.env.DB_USER}}:${process.env.DB_PASSWORD}@cluster0.9e7m0jr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
-
-// const uri = "mongodb+srv://geniusDBuser:0KDo3DEk4Fm34WxL@cluster0.9e7m0jr.mongodb.net/";
-// const uri = `mongodb://atlas-sql-65de2e2308fa7f675e1618ac-imzf0.a.query.mongodb.net/geniusCar?ssl=true&authSource=admin`
-const uri = "mongodb+srv://geniusDBuser:0KDo3DEk4Fm34WxL@cluster0.9e7m0jr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
     serverApi: {
         version: ServerApiVersion.v1,
